@@ -8,6 +8,7 @@ class Mediator(Notifier, IMediator):
     NAME = "Mediator"
 
     def __init__(self, mediator_name: Optional[str] = None, view_component: Any = None):
+        super().__init__()
         self._mediator_name = self.NAME if mediator_name is None else mediator_name
         self._view_component = view_component
 

@@ -4,11 +4,11 @@ from puremvc.interfaces import IProxy
 from puremvc.patterns.observer import Notifier
 
 
-class Proxy(Notifier, IProxy):
+class Proxy(IProxy, Notifier):
     NAME = "Proxy"
 
     def __init__(self, proxy_name: Optional[str] = None, data: Any = None):
-        super(Proxy, self).__init__()
+        super().__init__()
         self._proxy_name = self.NAME if proxy_name is None else proxy_name
         self._data = data
 

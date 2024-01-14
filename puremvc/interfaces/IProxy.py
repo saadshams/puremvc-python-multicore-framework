@@ -1,8 +1,10 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import Any
 
+from .INotifier import INotifier
 
-class IProxy(ABC):
+
+class IProxy(INotifier):
 
     @property
     @abstractmethod

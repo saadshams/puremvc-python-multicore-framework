@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
+from .INotifier import INotifier
 from puremvc.interfaces.INotification import INotification
 
 
-class IMediator(ABC):
+class IMediator(INotifier):
 
     @property
     @abstractmethod
