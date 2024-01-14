@@ -1,7 +1,7 @@
 from puremvc.interfaces import INotification, ICommand
+from puremvc.patterns.observer import Notifier
 
 
-class SimpleCommand(ICommand):
-
+class SimpleCommand(Notifier, ICommand):
     def execute(self, notification: INotification) -> None:
-        pass
+        return

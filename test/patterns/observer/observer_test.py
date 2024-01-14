@@ -4,7 +4,7 @@ from puremvc.patterns.observer import Observer
 from puremvc.patterns.observer import Notification
 
 
-class TestObserver(unittest.TestCase):
+class ObserverTest(unittest.TestCase):
 
     def test_observerAccessors(self):
         observer = Observer(None, None)

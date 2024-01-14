@@ -4,7 +4,6 @@ from puremvc.interfaces import IObserver, INotification
 
 
 class Observer(IObserver):
-
     def __init__(self, notify_method: Optional[Callable[[INotification], None]], notify_context: Any):
         self._notify_method = notify_method
         self._notify_context = notify_context

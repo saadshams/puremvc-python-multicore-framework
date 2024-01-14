@@ -2,7 +2,7 @@ import unittest
 from puremvc.patterns.proxy import Proxy
 
 
-class TestProxy(unittest.TestCase):
+class ProxyTest(unittest.TestCase):
 
     def test_nameAccessor(self):
         proxy = Proxy("TestProxy")
@@ -22,7 +22,7 @@ class TestProxy(unittest.TestCase):
         proxy = Proxy("colors", ["red", "green", "blue"])
         data = proxy.data
 
-        self.assertIsNotNone(proxy, "Expecting proxy not null")
+        self.assertIsNotNone(proxy, "Expecting proxy not None")
         self.assertEqual(True, len(data) == 3, "Expecting len(data) == 3")
         self.assertEqual(True, data[0] == "red", "Expecting data[0] == 'red'")
         self.assertEqual(True, data[1] == "green", "Expecting data[1] == 'green'")

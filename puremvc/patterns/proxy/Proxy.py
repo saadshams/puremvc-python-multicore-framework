@@ -1,9 +1,10 @@
 from typing import Optional, Any
 
 from puremvc.interfaces import IProxy
+from puremvc.patterns.observer import Notifier
 
 
-class Proxy(IProxy):
+class Proxy(Notifier, IProxy):
     NAME = "Proxy"
 
     def __init__(self, proxy_name: Optional[str] = None, data: Any = None):
@@ -24,7 +25,7 @@ class Proxy(IProxy):
         self._data = value
 
     def on_register(self) -> None:
-        pass
+        return
 
     def on_remove(self) -> None:
-        pass
+        return

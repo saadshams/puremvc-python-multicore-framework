@@ -1,21 +1,24 @@
 from typing import List, Callable
 
 from puremvc.interfaces import ICommand, INotification
+from puremvc.patterns.observer import Notifier
 
 
-class MacroCommand:
+class MacroCommand(Notifier, ICommand):
     def __init__(self):
+        super().__init__()
         self._subcommands: List[Callable[[], ICommand]] = []
-        self.initialize_macro_command()
 
     def initialize_macro_command(self) -> None:
-        pass
+        return
 
     def add_subcommand(self, factory: Callable[[], ICommand]) -> None:
         self._subcommands.append(factory)
 
     def execute(self, notification: INotification) -> None:
-        for factory in self._subcommands[:]:
+        self.initialize_macro_command()
+        while self._subcommands:
+            factory = self._subcommands.pop(0)
             command = factory()
-            # instance.initializeNotifier(self.multitonKey)
+            command.initialize_notifier(self.multitonKey)
             command.execute(notification)

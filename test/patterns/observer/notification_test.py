@@ -2,7 +2,7 @@ import unittest
 from puremvc.patterns.observer import Notification
 
 
-class TestNotification(unittest.TestCase):
+class NotificationTest(unittest.TestCase):
 
     def test_nameAccessor(self):
         note = Notification("TestNote")

@@ -1,9 +1,10 @@
 from typing import Optional, Any
 
 from puremvc.interfaces import IMediator, INotification
+from puremvc.patterns.observer import Notifier
 
 
-class Mediator(IMediator):
+class Mediator(Notifier, IMediator):
     NAME = "Mediator"
 
     def __init__(self, mediator_name: Optional[str] = None, view_component: Any = None):
@@ -26,10 +27,10 @@ class Mediator(IMediator):
         return []
 
     def handle_notification(self, notification: INotification) -> None:
-        pass
+        return
 
     def on_register(self) -> None:
-        pass
+        return
 
     def on_remove(self) -> None:
-        pass
+        return

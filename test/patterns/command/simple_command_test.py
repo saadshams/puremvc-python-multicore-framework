@@ -5,7 +5,7 @@ from puremvc.patterns.command import SimpleCommand
 from puremvc.patterns.observer import Notification
 
 
-class TestSimpleCommand(unittest.TestCase):
+class SimpleCommandTest(unittest.TestCase):
 
     def test_simple_command_execute(self):
         vo = SimpleCommandTestVO(5)

@@ -2,7 +2,7 @@ import unittest
 from puremvc.patterns.mediator import Mediator
 
 
-class TestMediator(unittest.TestCase):
+class MediatorTest(unittest.TestCase):
 
     def test_nameAccessor(self):
         mediator = Mediator()
@@ -11,7 +11,7 @@ class TestMediator(unittest.TestCase):
     def test_viewAccessor(self):
         view = object()
         mediator = Mediator(Mediator.NAME, view)
-        self.assertIsNotNone(mediator.view_component, "Expecting mediator.view_component not null")
+        self.assertIsNotNone(mediator.view_component, "Expecting mediator.view_component not None")
 
 
 if __name__ == '__main__':

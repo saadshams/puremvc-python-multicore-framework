@@ -4,7 +4,6 @@ from puremvc.interfaces import INotification
 
 
 class Notification(INotification):
-
     def __init__(self, name: str, body: Any = None, note_type: str = None):
         self._name = name
         self._body = body
