@@ -7,14 +7,15 @@ from puremvc.patterns.observer import Observer
 
 class View(IView):
     instanceMap: Dict[str, IView] = dict()
-    instanceMapLock = threading.Lock()
+    instanceMapLock: threading.Lock = threading.Lock()
 
     MULTITON_MSG = "View multiton instance for this key is already constructed!"
 
     def __init__(self, key: str):
         if View.instanceMap.get(key) is not None:
-            raise Exception(self.MULTITON_MSG)
-        self.multitonKey = key
+            raise Exception(View.MULTITON_MSG)
+        self.multitonKey: str = key
+        View.instanceMap[key] = self
         self.mediatorMap: Dict[str, IMediator] = dict()
         self.observerMap: Dict[str, List[IObserver]] = dict()
         self.initialize_view()

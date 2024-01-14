@@ -12,7 +12,8 @@ class Facade(IFacade):
 
     def __init__(self, key: str):
         if Facade.instanceMap.get(key) is not None:
-            raise Exception(self.MULTITON_MSG)
+            raise Exception(Facade.MULTITON_MSG)
+        self.multitonKey: str = key
 
     @classmethod
     def get_instance(cls, key: str, factory: Callable[[str], IFacade]) -> IFacade:

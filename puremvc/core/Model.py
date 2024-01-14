@@ -6,14 +6,14 @@ from puremvc.interfaces import IModel, IProxy
 
 class Model(IModel):
     instanceMap: Dict[str, IModel] = dict()
-    instanceMapLock = threading.Lock()
+    instanceMapLock: threading.Lock = threading.Lock()
 
     MULTITON_MSG = "Model multiton instance for this key is already constructed!"
 
     def __init__(self, key: str):
         if Model.instanceMap.get(key) is not None:
-            raise Exception(self.MULTITON_MSG)
-        self.multitonKey = key
+            raise Exception(Model.MULTITON_MSG)
+        self.multitonKey: str = key
         Model.instanceMap[key] = self
         self.proxyMap: Dict[str, IProxy] = dict()
         self.proxyMapLock = threading.Lock()
@@ -47,7 +47,7 @@ class Model(IModel):
             proxy.on_remove()
         return proxy
 
-    @staticmethod
+    @classmethod
     def remove_model(cls, key: str) -> None:
         with cls.instanceMapLock:
             cls.instanceMap.pop(key)
