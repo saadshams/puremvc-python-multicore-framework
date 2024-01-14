@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from typing import Callable
 
-from puremvc.interfaces import ICommand, INotification
+# from puremvc.interfaces import ICommand, INotification
+from .ICommand import ICommand
+from .INotification import INotification
 
 
 class IController(ABC):

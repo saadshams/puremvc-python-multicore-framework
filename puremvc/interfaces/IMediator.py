@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
+from .INotification import INotification
 from .INotifier import INotifier
-from puremvc.interfaces.INotification import INotification
 
 
 class IMediator(INotifier):

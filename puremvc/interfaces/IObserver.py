@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Callable
 
-from puremvc.interfaces import INotification
+from .INotification import INotification
 
 
 class IObserver(ABC):

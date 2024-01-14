@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from puremvc.interfaces import IProxy
+from .IProxy import IProxy
 
 
 class IModel(ABC):
