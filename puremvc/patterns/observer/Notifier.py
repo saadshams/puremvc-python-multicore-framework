@@ -1,6 +1,7 @@
 from typing import Any
 
 from puremvc.interfaces import IFacade, INotifier
+from puremvc.patterns.facade import Facade
 
 
 class Notifier(INotifier):
