@@ -1,0 +1,1 @@
+[![Python package](https://github.com/saadshams/puremvc-python-multicore-framework/actions/workflows/python-package.yml/badge.svg)](https://github.com/saadshams/puremvc-python-multicore-framework/actions/workflows/python-package.yml)
