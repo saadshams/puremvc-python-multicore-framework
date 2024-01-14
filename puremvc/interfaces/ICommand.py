@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 from .INotifier import INotifier
-from puremvc.interfaces import INotification
+from .INotification import INotification
 
 
 class ICommand(INotifier):
