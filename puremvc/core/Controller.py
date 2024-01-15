@@ -55,4 +55,4 @@ class Controller(IController):
     @classmethod
     def remove_controller(cls, key: str) -> None:
         with cls.instanceMapLock:
-            cls.instanceMap.pop(key)
+            del cls.instanceMap[key]

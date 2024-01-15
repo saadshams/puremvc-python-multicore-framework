@@ -33,7 +33,7 @@ class ModelTest(unittest.TestCase):
         model.register_proxy(proxy)
 
         removed_proxy = model.remove_proxy("sizes")
-        self.assertTrue(removed_proxy.proxy_name == "sizes", "Expecting removedProxy.proxy_name == 'sizes'")
+        self.assertTrue(removed_proxy.proxy_name == "sizes", "Expecting removed_proxy.proxy_name == 'sizes'")
 
         proxy = model.retrieve_proxy("colors")
         self.assertIsNone(proxy, "Expecting proxy is None")

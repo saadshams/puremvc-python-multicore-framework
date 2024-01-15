@@ -50,4 +50,4 @@ class Model(IModel):
     @classmethod
     def remove_model(cls, key: str) -> None:
         with cls.instanceMapLock:
-            cls.instanceMap.pop(key)
+            del cls.instanceMap[key]

@@ -1,7 +1,7 @@
 from typing import Optional, Any
 
 from puremvc.interfaces import IMediator, INotification
-from puremvc.patterns.observer import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class Mediator(Notifier, IMediator):

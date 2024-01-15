@@ -1,5 +1,5 @@
 from puremvc.interfaces import INotification, ICommand
-from puremvc.patterns.observer import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class SimpleCommand(Notifier, ICommand):

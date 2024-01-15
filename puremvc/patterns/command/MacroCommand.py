@@ -1,7 +1,7 @@
 from typing import List, Callable
 
 from puremvc.interfaces import ICommand, INotification
-from puremvc.patterns.observer import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class MacroCommand(Notifier, ICommand):

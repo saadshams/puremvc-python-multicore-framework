@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 from .INotifier import INotifier
 from .INotification import INotification
