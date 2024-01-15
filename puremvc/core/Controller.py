@@ -1,3 +1,11 @@
+"""
+ Controller.py
+ PureMVC Python Multicore
+
+ Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
+ Your reuse is governed by the BSD License
+"""
+
 import threading
 from typing import Dict, Callable
 

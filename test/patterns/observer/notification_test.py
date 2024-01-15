@@ -1,3 +1,11 @@
+"""
+ notification_test.py
+ PureMVC Python Multicore
+
+ Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
+ Your reuse is governed by the BSD License
+"""
+
 import unittest
 from puremvc.patterns.observer import Notification
 

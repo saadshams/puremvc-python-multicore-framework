@@ -1,3 +1,11 @@
+"""
+ MacroCommand.py
+ PureMVC Python Multicore
+
+ Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
+ Your reuse is governed by the BSD License
+"""
+
 from typing import List, Callable
 
 from puremvc.interfaces import ICommand, INotification

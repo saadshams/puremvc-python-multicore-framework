@@ -1,3 +1,11 @@
+"""
+ Mediator.py
+ PureMVC Python Multicore
+
+ Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
+ Your reuse is governed by the BSD License
+"""
+
 from typing import Optional, Any
 
 from puremvc.interfaces import IMediator, INotification
