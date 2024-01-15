@@ -31,7 +31,8 @@ class Facade(IFacade):
     @classmethod
     def get_instance(cls, key: str, factory: Callable[[str], IFacade]) -> IFacade:
         with cls.instanceMapLock:
-            cls.instanceMap[key] = factory(key)
+            if key not in cls.instanceMap:
+                cls.instanceMap[key] = factory(key)
         return cls.instanceMap.get(key)
 
     def initialize_controller(self) -> None:
