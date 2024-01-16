@@ -25,7 +25,7 @@ class NotifierTest(unittest.TestCase):
 
 
 class NotifierTestCommand(SimpleCommand):
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo = notification.body
         vo.result = 2 * vo.input
 

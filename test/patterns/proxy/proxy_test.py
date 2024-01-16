@@ -35,6 +35,7 @@ class ProxyTest(unittest.TestCase):
         self.assertEqual(True, data[0] == "red", "Expecting data[0] == 'red'")
         self.assertEqual(True, data[1] == "green", "Expecting data[1] == 'green'")
         self.assertEqual(True, data[2] == "blue", "Expecting data[2] == 'blue'")
+        proxy.data = [1, 2, 3]
 
 
 if __name__ == '__main__':

@@ -77,10 +77,10 @@ class ModelTestProxy(Proxy):
     def __init__(self):
         super().__init__(ModelTestProxy.NAME)
 
-    def on_register(self) -> None:
+    def on_register(self):
         self.data = ModelTestProxy.ON_REGISTER_CALLED
 
-    def on_remove(self) -> None:
+    def on_remove(self):
         self.data = ModelTestProxy.ON_REMOVE_CALLED
 
 

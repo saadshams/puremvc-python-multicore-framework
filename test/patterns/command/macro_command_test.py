@@ -27,21 +27,21 @@ class MacroCommandTest(unittest.TestCase):
 
 class MacroCommandTestCommand(MacroCommand):
 
-    def initialize_macro_command(self) -> None:
+    def initialize_macro_command(self):
         self.add_subcommand(lambda: MacroCommandTestSub1Command())
         self.add_subcommand(lambda: MacroCommandTestSub2Command())
 
 
 class MacroCommandTestSub1Command(SimpleCommand):
 
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo = notification.body
         vo.result1 = 2 * vo.input
 
 
 class MacroCommandTestSub2Command(SimpleCommand):
 
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo = notification.body
         vo.result2 = vo.input * vo.input
 

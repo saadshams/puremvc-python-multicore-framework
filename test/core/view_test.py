@@ -220,7 +220,7 @@ class ViewTestMediator2(Mediator):
     def list_notification_interests(self) -> [str]:
         return [ViewTest.NOTE1, ViewTest.NOTE2]
 
-    def handle_notification(self, notification: INotification) -> None:
+    def handle_notification(self, notification: INotification):
         self.view_component.lastNotification = notification.name
 
 
@@ -233,7 +233,7 @@ class ViewTestMediator3(Mediator):
     def list_notification_interests(self) -> [str]:
         return [ViewTest.NOTE3]
 
-    def handle_notification(self, notification: INotification) -> None:
+    def handle_notification(self, notification: INotification):
         self.view_component.lastNotification = notification.name
 
 
@@ -243,10 +243,10 @@ class ViewTestMediator4(Mediator):
     def __init__(self, view: object):
         super().__init__(ViewTestMediator4.NAME, view)
 
-    def on_register(self) -> None:
+    def on_register(self):
         self.view_component.onRegisterCalled = True
 
-    def on_remove(self) -> None:
+    def on_remove(self):
         self.view_component.onRemoveCalled = True
 
 
@@ -259,7 +259,7 @@ class ViewTestMediator5(Mediator):
     def list_notification_interests(self) -> [str]:
         return [ViewTest.NOTE5]
 
-    def handle_notification(self, notification: INotification) -> None:
+    def handle_notification(self, notification: INotification):
         self.view_component.counter += 1
 
 
@@ -272,11 +272,11 @@ class ViewTestMediator6(Mediator):
     def list_notification_interests(self) -> [str]:
         return [ViewTest.NOTE6]
 
-    def handle_notification(self, notification: INotification) -> None:
+    def handle_notification(self, notification: INotification):
         pass
         # facade.removeMediator(self.mediator_name)
 
-    def on_remove(self) -> None:
+    def on_remove(self):
         self.view_component.counter += 1
 
 

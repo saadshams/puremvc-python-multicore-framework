@@ -13,17 +13,85 @@ from puremvc.patterns.facade import Notifier
 
 
 class MacroCommand(Notifier, ICommand):
+    """
+    :class: MacroCommand
+
+    A base `ICommand` implementation that executes other `ICommand`s.
+
+    A `MacroCommand` maintains a list of `ICommand` Class references called `SubCommands`.
+
+    When `execute` is called, the `MacroCommand`
+    instantiates and calls `execute` on each of its `SubCommand`s turn.
+    Each `SubCommand` will be passed a reference to the original
+    `INotification` that was passed to the `MacroCommand`'s
+    `execute` method.
+
+    Unlike `SimpleCommand`, your subclass
+    should not override `execute`, but instead, should
+    override the `initializeMacroCommand` method,
+    calling `addSubCommand` once for each `SubCommand`
+    to be executed.
+
+    @see: `Controller<puremvc.core.Controller>`
+    @see: `Notification<puremvc.patterns.observer.Notification>`
+    @see: `SimpleCommand<puremvc.patterns.command.SimpleCommand>`
+    """
     def __init__(self):
+        """
+        MacroCommand Constructor.
+
+        You should not need to define a constructor, instead, override the `initialize_macro_command` method.
+
+        If your subclass does define a constructor, be sure to call `super().__init__()`.
+
+        :return: None
+        """
         super().__init__()
         self._subcommands: List[Callable[[], ICommand]] = []
 
-    def initialize_macro_command(self) -> None:
+    def initialize_macro_command(self):
+        """
+        Initialize the `MacroCommand`.
+
+        In your subclass, override this method to initialize the `MacroCommand`'s `SubCommand` list with `ICommand`
+        class references like this::
+
+        # Initialize MyMacroCommand
+        def initialize_macro_command(self):
+            self.add_subcommand(lambda: FirstCommand())
+            self.add_subcommand(lambda: SecondCommand())
+            self.add_subcommand(lambda: ThirdCommand())
+
+        Note that `SubCommands`s may be any `ICommand` implementor,
+        `MacroCommand`s or `SimpleCommands` are both acceptable.
+
+        :return: None
+        """
         return
 
-    def add_subcommand(self, factory: Callable[[], ICommand]) -> None:
+    def add_subcommand(self, factory: Callable[[], ICommand]):
+        """
+        Add a `SubCommand`.
+
+        The `SubCommands` will be called in First In/First Out (FIFO) order.
+
+        :param factory: A callable object that returns an instance of ICommand.
+        :type factory: Callable[[], ICommand]
+        :return: None
+        """
         self._subcommands.append(factory)
 
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
+        """
+        Execute this `MacroCommand`'s `SubCommands`.
+
+        The `SubCommands` will be called in First In/First Out (FIFO)
+        order.
+
+        :param notification: The `INotification` object to be passed to each`SubCommand`.
+        :type notification: INotification
+        :return: None
+        """
         self.initialize_macro_command()
         while self._subcommands:
             factory = self._subcommands.pop(0)

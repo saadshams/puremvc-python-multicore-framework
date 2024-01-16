@@ -80,13 +80,13 @@ class ControllerTest(unittest.TestCase):
 
 
 class ControllerTestCommand(SimpleCommand):
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo: ControllerTestVO = notification.body
         vo.result = 2 * vo.input
 
 
 class ControllerTestCommand2(SimpleCommand):
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo: ControllerTestVO = notification.body
         vo.result = vo.result + (2 * vo.input)
 

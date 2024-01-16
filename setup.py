@@ -5,7 +5,7 @@ setup(
     version="2.0.0",
     description="PureMVC Multicore Framework for Python",
     packages=find_packages(),
-    url="",
+    url="https://www.puremvc.org",
     license="",
     author="Saad Shams",
     author_email="saad.shams@puremvc.org"

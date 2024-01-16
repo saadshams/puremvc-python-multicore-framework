@@ -125,7 +125,7 @@ class FacadeTest(unittest.TestCase):
 
 
 class FacadeTestCommand(SimpleCommand):
-    def execute(self, notification: INotification) -> None:
+    def execute(self, notification: INotification):
         vo: FacadeTestVO = notification.body
         vo.result = 2 * vo.input
 
