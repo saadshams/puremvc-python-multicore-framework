@@ -19,7 +19,7 @@ from puremvc.patterns.proxy import Proxy
 class FacadeTest(unittest.TestCase):
     def test_get_instance(self):
         facade: IFacade = Facade.get_instance("FacadeTestKey1", lambda k: Facade(k))
-        self.assertIsNotNone(facade, "Expecting instance not null")
+        self.assertIsNotNone(facade, "Expecting instance not None")
         self.assertIsInstance(facade, IFacade, "Expecting instance implements IFacade")
 
     def test_register_command_and_send_notification(self):
@@ -48,7 +48,7 @@ class FacadeTest(unittest.TestCase):
         self.assertIsInstance(proxy, IProxy, "Expecting proxy is IProxy")
         data: [str] = proxy.data
 
-        self.assertIsNotNone(data, "Expecting data not null")
+        self.assertIsNotNone(data, "Expecting data not None")
         self.assertIsInstance(data, List, "Expecting data is List")
         self.assertTrue(len(data) == 3, "Expecting len(data) == 3")
         self.assertTrue(data[0] == "red", "Expecting data[0] == 'red'")
@@ -80,7 +80,7 @@ class FacadeTest(unittest.TestCase):
                         "Expecting removed_mediator.mediator_name == Mediator.NAME")
 
         self.assertIsNone(facade.retrieve_mediator(Mediator.NAME),
-                          "Expecting facade.retrieve_mediator(Mediator.NAME) == null")
+                          "Expecting facade.retrieve_mediator(Mediator.NAME) == None")
 
     def test_has_proxy(self):
         facade: IFacade = Facade.get_instance("FacadeTestKey7", lambda k: Facade(k))
