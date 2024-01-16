@@ -15,9 +15,7 @@ from puremvc.patterns.observer import Notification
 
 
 class ControllerTest(unittest.TestCase):
-    """
-    Test the PureMVC Controller class.
-    """
+    """Test the PureMVC Controller class."""
     def test_get_instance(self):
         # Test Factory Method
         controller: IController = Controller.get_instance("ControllerTestKey1", lambda k: Controller(k))
@@ -31,7 +29,7 @@ class ControllerTest(unittest.TestCase):
     
     This test gets a Multiton Controller instance 
     and registers the ControllerTestCommand class 
-    to handle 'ControllerTest' Notifications.<P>
+    to handle 'ControllerTest' Notifications.
     
     It then constructs such a Notification and tells the 
     Controller to execute the associated Command.

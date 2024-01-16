@@ -16,6 +16,8 @@ from puremvc.patterns.observer import Observer
 
 class Controller(IController):
     """
+    :class: Controller
+
     A Multiton `IController` implementation.
 
     In PureMVC, the `Controller` class follows the

@@ -14,6 +14,8 @@ from .INotification import INotification
 
 class IObserver(ABC):
     """
+    :class: IObserver
+
     The interface definition for a PureMVC Observer.
 
     In PureMVC, `IObserver` implementors assume these responsibilities:

@@ -22,7 +22,7 @@ class SimpleCommandTest(unittest.TestCase):
         This test creates a new `Notification`, adding a 
         `SimpleCommandTestVO` as the body. 
         It then creates a `SimpleCommandTestCommand` and invokes
-        its `execute` method, passing in the note.</P>
+        its `execute` method, passing in the note.
         
         Success is determined by evaluating a property on the 
         object that was passed on the Notification body, which will

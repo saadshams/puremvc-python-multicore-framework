@@ -16,6 +16,8 @@ from .IObserver import IObserver
 
 class IView(ABC):
     """
+    :class: IView
+
     The interface definition for a PureMVC View.
 
     In PureMVC, `IView` implementors assume these responsibilities:

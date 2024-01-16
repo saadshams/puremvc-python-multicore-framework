@@ -97,13 +97,9 @@ class Mediator(Notifier, IMediator):
         return
 
     def on_register(self):
-        """
-        Called by the View when the Mediator is registered
-        """
+        """Called by the View when the Mediator is registered"""
         return
 
     def on_remove(self):
-        """
-        Called by the View when the Mediator is removed
-        """
+        """Called by the View when the Mediator is removed"""
         return

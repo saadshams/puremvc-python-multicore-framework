@@ -82,17 +82,9 @@ class Proxy(IProxy, Notifier):
         self._data = value
 
     def on_register(self):
-        """
-        Called by the `Model` when the `Proxy` is registered
-
-        :return: None
-        """
+        """Called by the `Model` when the `Proxy` is registered"""
         return
 
     def on_remove(self):
-        """
-        Called by the `Model` when the `Proxy` is removed
-
-        :return: None
-        """
+        """Called by the `Model` when the `Proxy` is removed"""
         return

@@ -53,9 +53,7 @@ class Notifier(INotifier):
     MULTITON_MSG = "multitonKey for this Notifier not yet initialized!"
 
     def __init__(self):
-        """
-        Initialise the `INotifier` instance with an empty multiton key
-        """
+        """Initialise the `INotifier` instance with an empty multiton key"""
         self.multitonKey = None
 
     def send_notification(self, notification_name: str, body: Any = None, note_type: str = None):

@@ -15,6 +15,7 @@ from puremvc.patterns.observer import Observer, Notification
 
 
 class ViewTest(unittest.TestCase):
+    """Test the PureMVC View class."""
     NOTE1 = "note1"
     NOTE2 = "note2"
     NOTE3 = "note3"
@@ -23,6 +24,7 @@ class ViewTest(unittest.TestCase):
     NOTE6 = "note6"
 
     def __init__(self, method_name: str = "runTest"):
+        """Constructor."""
         super().__init__(method_name)
         self.lastNotification = ""
         self.onRegisterCalled = False
@@ -58,7 +60,6 @@ class ViewTest(unittest.TestCase):
     it is the same as that passed out as the payload of the 
     original 'ViewTestEvent'.
     """
-
     def test_register_and_notify_observer(self):
         # Get the Multiton View instance
         view: IView = View.get_instance("ViewTestKey2", lambda k: View(k))

@@ -12,6 +12,8 @@ from typing import Any
 
 class INotifier(ABC):
     """
+    :class: INotifier
+
     The interface definition for a PureMVC Notifier.
 
     `MacroCommand, Command, Mediator` and `Proxy`

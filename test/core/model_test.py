@@ -15,7 +15,7 @@ from puremvc.patterns.proxy import Proxy
 
 
 class ModelTest(unittest.TestCase):
-    """Constructor."""
+    """Test the PureMVC Model class."""
     def test_get_instance(self):
         """Tests the Model Multiton Factory Method"""
         # Test Factory Method

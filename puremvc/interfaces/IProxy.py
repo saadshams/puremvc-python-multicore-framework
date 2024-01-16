@@ -14,10 +14,23 @@ from .INotifier import INotifier
 
 class IProxy(INotifier):
     """
-    Get the Proxy name
+    :class: IProxy
 
-    :return: The name of the proxy as a string.
-    :rtype: str
+    The interface definition for a PureMVC Proxy.
+
+    In PureMVC, 'IProxy' implementors assume these responsibilities:</P>
+
+    Implement a common method which returns the name of the Proxy.
+    Provide methods for setting and getting the data object.
+
+    Additionally, 'IProxy's typically:
+
+    Maintain references to one or more pieces of model data.
+    Provide methods for manipulating that data.
+    Generate 'INotifications' when their model data changes.
+    Expose their name as a 'public static const' called 'NAME',
+    if they are not instantiated multiple times.
+    Encapsulate interaction with local or remote services used to fetch and persist model data.
     """
     @property
     @abstractmethod
@@ -54,14 +67,10 @@ class IProxy(INotifier):
 
     @abstractmethod
     def on_register(self):
-        """
-        Called by the Model when the Proxy is registered.
-        """
+        """Called by the Model when the Proxy is registered."""
         pass
 
     @abstractmethod
     def on_remove(self):
-        """
-        Called by the Model when the Proxy is removed.
-        """
+        """Called by the Model when the Proxy is removed."""
         pass

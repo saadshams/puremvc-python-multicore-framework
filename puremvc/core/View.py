@@ -15,6 +15,8 @@ from puremvc.patterns.observer import Observer
 
 class View(IView):
     """
+    :class: View
+
     A Multiton `IView` implementation.
 
     In PureMVC, the `View` class assumes these responsibilities:
