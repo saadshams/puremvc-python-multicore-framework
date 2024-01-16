@@ -75,7 +75,7 @@ class FacadeTest(unittest.TestCase):
 
         # Send notification. The Command associated with the event
         # (FacadeTestCommand) will NOT be invoked, and will NOT multiply 
-        # the vo.input value by 2 
+        # the vo.input value by 2
         vo = FacadeTestVO(32)
         facade.send_notification("FacadeTestNote", vo)
 
