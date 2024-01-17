@@ -9,7 +9,8 @@
 from typing import List, Callable
 
 from puremvc.interfaces import ICommand, INotification
-from puremvc.patterns.facade import Notifier
+
+from src.puremvc.patterns.facade import Notifier
 
 
 class MacroCommand(Notifier, ICommand):
@@ -36,6 +37,7 @@ class MacroCommand(Notifier, ICommand):
     @see: `Notification<puremvc.patterns.observer.Notification>`
     @see: `SimpleCommand<puremvc.patterns.command.SimpleCommand>`
     """
+
     def __init__(self):
         """
         MacroCommand Constructor.

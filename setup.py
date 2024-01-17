@@ -1,12 +1,13 @@
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
 
 setup(
     name="PureMVC",
     version="2.0.0",
     description="PureMVC Multicore Framework for Python",
-    packages=find_packages(),
-    url="https://www.puremvc.org",
+    url="https://github.com/PureMVC/puremvc-python-multicore-framework",
     license="",
     author="Saad Shams",
-    author_email="saad.shams@puremvc.org"
+    packages=find_packages(where='src'),
+    package_dir={'': 'src'},
+    author_email="saad.shams@puremvc.org",
 )

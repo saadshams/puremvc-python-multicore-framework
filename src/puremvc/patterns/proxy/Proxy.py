@@ -9,7 +9,8 @@
 from typing import Any
 
 from puremvc.interfaces import IProxy
-from puremvc.patterns.facade import Notifier
+
+from src.puremvc.patterns.facade import Notifier
 
 
 class Proxy(IProxy, Notifier):

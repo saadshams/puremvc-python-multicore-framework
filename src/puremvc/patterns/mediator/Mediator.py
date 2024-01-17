@@ -9,7 +9,8 @@
 from typing import Any
 
 from puremvc.interfaces import IMediator, INotification
-from puremvc.patterns.facade import Notifier
+
+from src.puremvc.patterns.facade import Notifier
 
 
 class Mediator(Notifier, IMediator):

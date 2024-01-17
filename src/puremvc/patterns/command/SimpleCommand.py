@@ -7,7 +7,8 @@
 """
 
 from puremvc.interfaces import INotification, ICommand
-from puremvc.patterns.facade import Notifier
+
+from src.puremvc.patterns.facade import Notifier
 
 
 class SimpleCommand(Notifier, ICommand):
@@ -23,6 +24,7 @@ class SimpleCommand(Notifier, ICommand):
     @see: `Notification<puremvc.patterns.observer.Notification>`
     @see: `MacroCommand<puremvc.patterns.command.MacroCommand>`
     """
+
     def execute(self, notification: INotification):
         """
         Fulfill the use-case initiated by the given `INotification`.
