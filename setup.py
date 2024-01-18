@@ -7,7 +7,7 @@ setup(
     url="https://github.com/PureMVC/puremvc-python-multicore-framework",
     license="",
     author="Saad Shams",
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'},
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     author_email="saad.shams@puremvc.org",
 )
