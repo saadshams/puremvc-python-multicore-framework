@@ -18,7 +18,7 @@ cp ../build/conf.py ../build/index.rst source/
 cd ../ && sphinx-apidoc -o ./docs/source/ ./src/puremvc
 cd docs && make html && open build/html/index.html
 
-# update
+# update documentation
 python3 setup.py sdist && pip3 install dist/PureMVC-2.0.0.tar.gz
 cd docs && make html && open build/html/index.html && cd ..
 ```
