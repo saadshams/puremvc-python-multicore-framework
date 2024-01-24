@@ -1,10 +1,8 @@
-"""
- INotification.py
- PureMVC Python Multicore
+# INotification.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
 from typing import Any
@@ -12,8 +10,6 @@ from typing import Any
 
 class INotification(ABC):
     """
-    :class: INotification
-
     The interface definition for a PureMVC Notification.
 
     PureMVC does not rely upon underlying event models such
@@ -28,21 +24,24 @@ class INotification(ABC):
     in Flex/Flash/AIR. Generally, `IMediator` implementors
     place event listeners on their view components, which they
     then handle in the usual way. This may lead to the broadcast of `Notification`s to
-    trigger `ICommand`s or to communicate with other `IMediators`. `IProxy` and `ICommand`
-    instances communicate with each other and `IMediator`s by broadcasting `INotification`s.
+    trigger `ICommand`s or to communicate with other `IMediator`, `IProxy` and `ICommand`
+    instances communicate with each other and `IMediator` by broadcasting `INotification`.
 
     A key difference between Flash `Event`s and PureMVC
-    `Notification`s is that `Event`s follow the
+    `Notification`s is that `Event` follows the
     'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy
     until some parent component handles the `Event`, while
-    PureMVC `Notification`s follow a 'Publish/Subscribe'
+    PureMVC `Notification` follows a 'Publish/Subscribe'
     pattern. PureMVC classes need not be related to each other in a
     parent/child relationship to communicate with one another
     using `Notification`s.
 
-    @see: `IView<puremvc.interfaces.IView>`
-    @see: `IObserver<puremvc.interfaces.IObserver>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.IView`
+    :class:`puremvc.interfaces.IObserver`
     """
+
     @property
     @abstractmethod
     def name(self) -> str:

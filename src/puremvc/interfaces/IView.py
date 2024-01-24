@@ -1,10 +1,8 @@
-"""
- IView.py
- PureMVC Python Multicore
+# IView.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
 from typing import Any
@@ -16,8 +14,6 @@ from .IObserver import IObserver
 
 class IView(ABC):
     """
-    :class: IView
-
     The interface definition for a PureMVC View.
 
     In PureMVC, `IView` implementors assume these responsibilities:
@@ -31,10 +27,13 @@ class IView(ABC):
     Providing a method for broadcasting an `INotification`.
     Notifying the `IObservers` of a given `INotification` when it broadcast.
 
-    @see: `IMediator<puremvc.interfaces.IMediator>`
-    @see: `IObserver<puremvc.interfaces.IObserver>`
-    @see: `INotification<puremvc.interfaces.INotification>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.IMediator`
+    :class:`puremvc.interfaces.IObserver`
+    :class:`puremvc.interfaces.INotification`
     """
+
     @abstractmethod
     def register_observer(self, notification_name: str, observer: IObserver):
         """

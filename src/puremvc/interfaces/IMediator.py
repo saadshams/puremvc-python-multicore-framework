@@ -1,10 +1,8 @@
-"""
- IMediator.py
- PureMVC Python Multicore
+# IMediator.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import abstractmethod
 from typing import Any
@@ -15,17 +13,15 @@ from .INotifier import INotifier
 
 class IMediator(INotifier):
     """
-    :class: IMediator
-
     The base interface for all Mediator classes.
 
     In PureMVC, `IMediator` implementors assume these responsibilities:
 
-    Implement a common method which returns a list of all `INotification's
+    Implement a common method which returns a list of all `INotification`s
     the `IMediator` has interest in implementing a notification callback method.
     Implement methods that are called when the IMediator is registered or removed from the View.
     
-    Additionally, `IMediator's typically:
+    Additionally, `IMediator`s typically:
 
     Act as an intermediary between one or more view components such as text boxes or
     list controls, maintaining references and coordinating their behavior.
@@ -47,8 +43,11 @@ class IMediator(INotifier):
     and register it as an Observer for each `INotification` name returned by
     `list_notification_interests`.
 
-    @see: INotification<puremvc.interfaces.INotification>
+    See Also
+    --------
+    :class:`puremvc.interfaces.INotification`
     """
+
     @property
     @abstractmethod
     def mediator_name(self) -> str:

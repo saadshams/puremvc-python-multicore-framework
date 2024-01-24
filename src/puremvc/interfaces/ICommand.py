@@ -1,25 +1,24 @@
-"""
- ICommand.py
- PureMVC Python Multicore
+# ICommand.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import abstractmethod
 
-from .INotifier import INotifier
 from .INotification import INotification
+from .INotifier import INotifier
 
 
 class ICommand(INotifier):
     """
-    :class: ICommand
-
     The interface definition for a PureMVC Command
 
-    @see: `INotification<puremvc.interfaces.INotification>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.INotification`
     """
+
     @abstractmethod
     def execute(self, notification: INotification):
         """

@@ -1,22 +1,17 @@
-"""
- Notifier.py
- PureMVC Python Multicore
+# Notifier.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from typing import Any
 
 from puremvc.interfaces import IFacade, INotifier
-
-from src.puremvc.patterns.facade import Facade
+from puremvc.patterns.facade import Facade
 
 
 class Notifier(INotifier):
     """
-    :class: Notifier
-
     A Base `INotifier` implementation.
 
     `MacroCommand, Command, Mediator` and `Proxy`
@@ -39,15 +34,17 @@ class Notifier(INotifier):
 
     The multitonKey is set:
 
-    on a Command when it is executed by the Controller
-    on a Mediator is registered with the View
-    on a Proxy is registered with the Model.
+    - on a Command when it is executed by the Controller
+    - on a Mediator is registered with the View
+    - on a Proxy is registered with the Model.
 
-    @see: `Proxy<puremvc.patterns.proxy.Proxy>`
-    @see: `Facade<puremvc.patterns.facade.Facade>`
-    @see: `Mediator<puremvc.patterns.mediator.Mediator>`
-    @see: `MacroCommand<puremvc.patterns.command.MacroCommand>`
-    @see: `SimpleCommand<puremvc.patterns.command.SimpleCommand>`
+    See Also
+    --------
+    :class:`puremvc.patterns.proxy.Proxy`
+    :class:`puremvc.patterns.facade.Facade`
+    :class:`puremvc.patterns.mediator.Mediator`
+    :class:`puremvc.patterns.command.MacroCommand`
+    :class:`puremvc.patterns.command.SimpleCommand`
     """
 
     """Multiton error message"""

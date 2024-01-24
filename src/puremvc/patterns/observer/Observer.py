@@ -1,10 +1,8 @@
-"""
- Observer.py
- PureMVC Python Multicore
+# Observer.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from typing import Any, Callable
 
@@ -13,8 +11,6 @@ from puremvc.interfaces import IObserver, INotification
 
 class Observer(IObserver):
     """
-    :class: Observer
-
     A base `IObserver` implementation.
 
     An `Observer` is an object that encapsulates information
@@ -31,9 +27,12 @@ class Observer(IObserver):
 
     Provide a method for notifying the interested object.
 
-    @see: `View<puremvc.core.View>`
-    @see: `Notification<puremvc.patterns.observer.Notification>`
+    See Also
+    --------
+    :class:`puremvc.core.View`
+    :class:`puremvc.patterns.observer.Notification`
     """
+
     def __init__(self, notify_method: Callable[[INotification], None] = None, notify_context: Any = None):
         """
         Constructor.

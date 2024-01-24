@@ -1,23 +1,19 @@
-"""
- Controller.py
- PureMVC Python Multicore
+# Controller.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 import threading
 from typing import Dict, Callable
 
-from .View import View
 from puremvc.interfaces import IController, ICommand, IView, INotification
 from puremvc.patterns.observer import Observer
+from .View import View
 
 
 class Controller(IController):
     """
-    :class: Controller
-
     A Multiton `IController` implementation.
 
     In PureMVC, the `Controller` class follows the
@@ -41,14 +37,16 @@ class Controller(IController):
     Controller.
 
     The simplest way is to subclass `Facade`,
-    and use its `initializeController` method to add your
+    and use its `initialize_controller` method to add your
     registrations.
 
-    @see: `View<puremvc.core.view.View>`
-    @see: `Observer<puremvc.patterns.observer.Observer>`
-    @see: `Notification<puremvc.patterns.observer.Notification>`
-    @see: `SimpleCommand<puremvc.patterns.command.SimpleCommand>`
-    @see: `MacroCommand<puremvc.patterns.command.MacroCommand>`
+    See Also
+    --------
+    :class:`.View`
+    :class:`puremvc.patterns.observer.Observer`
+    :class:`puremvc.patterns.observer.Notification`
+    :class:`puremvc.patterns.command.SimpleCommand`
+    :class:`puremvc.patterns.command.MacroCommand`
     """
     instanceMap: Dict[str, IController] = dict()
     instanceMapLock: threading.Lock = threading.Lock()
@@ -61,7 +59,7 @@ class Controller(IController):
         This `IController` implementation is a Multiton, so you should not
         call the constructor directly, but instead call the static Factory
         method, passing the unique key for this instance
-        `Controller.get_instance(multiton_key)`
+        `Controller.get_instance(multitonKey, lambda k: Controller(k))`
 
         :param key: The unique key identifier for the Controller instance.
         :type key: str
@@ -83,7 +81,10 @@ class Controller(IController):
 
         Note that if you are using a subclass of `View` in your application,
         you should also subclass `Controller` and override the
-        `initializeController` method in the following way::
+        `initialize_controller` method in the following way::
+
+            def initialize_controller(self):
+                self.view = MyView.get_instance(self.multitonKey, lambda: key: MyView(key))
 
         :return: None
         """

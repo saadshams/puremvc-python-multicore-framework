@@ -1,25 +1,22 @@
-"""
- Mediator.py
- PureMVC Python Multicore
+# Mediator.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from typing import Any
 
 from puremvc.interfaces import IMediator, INotification
-
-from src.puremvc.patterns.facade import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class Mediator(Notifier, IMediator):
     """
-    :class: Mediator
-
     A base `IMediator` implementation.
 
-    @see: `View<puremvc.core.View>`
+    See Also
+    --------
+    :class:`puremvc.core.View`
     """
 
     """NAME (str): The name of the `Mediator`"""
@@ -55,7 +52,7 @@ class Mediator(Notifier, IMediator):
     @property
     def view_component(self) -> Any:
         """
-        Get the `Mediator`'s view component.
+        Get the `Mediator`s view component.
 
         :return: The view component.
         :rtype: Any
@@ -65,7 +62,7 @@ class Mediator(Notifier, IMediator):
     @view_component.setter
     def view_component(self, value: Any):
         """
-        Set the `IMediator`'s view component.
+        Set the `IMediator`s view component.
 
         :param value: The view component
         :type value: Any

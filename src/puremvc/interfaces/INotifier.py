@@ -1,10 +1,8 @@
-"""
- INotifier.py
- PureMVC Python Multicore
+# INotifier.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import abstractmethod, ABC
 from typing import Any
@@ -12,8 +10,6 @@ from typing import Any
 
 class INotifier(ABC):
     """
-    :class: INotifier
-
     The interface definition for a PureMVC Notifier.
 
     `MacroCommand, Command, Mediator` and `Proxy`
@@ -30,8 +26,10 @@ class INotifier(ABC):
     classes have frequent `Facade` interactions and usually require
     access to the facade anyway.
 
-    @see: `IFacade<puremvc.interfaces.IFacade>`
-    @see: `INotification<puremvc.interfaces.INotification>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.IFacade`
+    :class:`puremvc.interfaces.INotification`
     """
 
     @abstractmethod

@@ -1,10 +1,8 @@
-"""
- IModel.py
- PureMVC Python Multicore
+# IModel.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
 
@@ -13,8 +11,6 @@ from .IProxy import IProxy
 
 class IModel(ABC):
     """
-    :class: IModel
-
     The interface definition for a PureMVC Model.
 
     In PureMVC, `IModel` implementors provide
@@ -25,6 +21,7 @@ class IModel(ABC):
     Maintain a cache of `IProxy` instances
     Provide methods for registering, retrieving, and removing `IProxy` instances
     """
+
     @abstractmethod
     def register_proxy(self, proxy: IProxy):
         """

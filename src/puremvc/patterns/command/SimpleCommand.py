@@ -1,28 +1,26 @@
-"""
- SimpleCommand.py
- PureMVC Python Multicore
+# SimpleCommand.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from puremvc.interfaces import INotification, ICommand
 
-from src.puremvc.patterns.facade import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class SimpleCommand(Notifier, ICommand):
     """
-    :class: SimpleCommand
-
     A base `ICommand` implementation.
 
     Your subclass should override the `execute`
     method where your business logic will handle the `INotification`.
 
-    @see: `Controller<puremvc.core.Controller>`
-    @see: `Notification<puremvc.patterns.observer.Notification>`
-    @see: `MacroCommand<puremvc.patterns.command.MacroCommand>`
+    See Also
+    --------
+    :class:`puremvc.core.Controller`
+    :class:`puremvc.patterns.observer.Notification`
+    :class:`puremvc.patterns.command.MacroCommand`
     """
 
     def execute(self, notification: INotification):

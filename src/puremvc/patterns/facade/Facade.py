@@ -1,10 +1,8 @@
-"""
- Facade.py
- PureMVC Python Multicore
+# Facade.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 import threading
 from typing import Dict, Callable, Any
@@ -16,8 +14,6 @@ from puremvc.patterns.observer import Notification
 
 class Facade(IFacade):
     """
-    :class: Facade
-
     A base Multiton `IFacade` implementation.
 
     In PureMVC, the `Facade` class assumes these responsibilities:
@@ -30,14 +26,16 @@ class Facade(IFacade):
 
     Providing a single point of contact to the application for registering `Commands` and notifying `Observers`
 
-    @see: `Model<puremvc.core.Model>`
-    @see: `View<puremvc.core.View>`
-    @see: `Controller<puremvc.core.Controller>`
-    @see: `Notification<puremvc.patterns.observer.Notification>`
-    @see: `Mediator<puremvc.patterns.mediator.Mediator>`
-    @see: `Proxy<puremvc.patterns.proxy.Proxy>`
-    @see: `SimpleCommand<puremvc.patterns.command.SimpleCommand>`
-    @see: `MacroCommand<puremvc.patterns.command.MacroCommand>`
+    See Also
+    --------
+    :class:`puremvc.core.Model`
+    :class:`puremvc.core.View`
+    :class:`puremvc.core.Controller`
+    :class:`puremvc.patterns.observer.Notification`
+    :class:`puremvc.patterns.mediator.Mediator`
+    :class:`puremvc.patterns.proxy.Proxy`
+    :class:`puremvc.patterns.command.SimpleCommand`
+    :class:`puremvc.patterns.command.MacroCommand`
     """
     instanceMap: Dict[str, IFacade] = dict()
     instanceMapLock = threading.Lock()
@@ -262,7 +260,7 @@ class Facade(IFacade):
 
         :param mediator_name: The name of the `IMediator`
         :type mediator_name: str
-        :return: the `IMediator` previously registered with the given `mediatorName`.
+        :return: the `IMediator` previously registered with the given `mediator_name`.
         :rtype: IMediator
         """
         return self.view.retrieve_mediator(mediator_name)

@@ -1,10 +1,8 @@
-"""
- IObserver.py
- PureMVC Python Multicore
+# IObserver.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
 from typing import Any, Callable
@@ -14,8 +12,6 @@ from .INotification import INotification
 
 class IObserver(ABC):
     """
-    :class: IObserver
-
     The interface definition for a PureMVC Observer.
 
     In PureMVC, `IObserver` implementors assume these responsibilities:
@@ -44,13 +40,17 @@ class IObserver(ABC):
     acts as a proxy for notifying the interested object.
 
     Observers can receive `Notification`s by having their
-    `notifyObserver` method invoked, passing
+    `notify_observer` method invoked, passing
     in an object implementing the `INotification` interface, such
     as a subclass of `Notification`.
 
-    @see: `IView<puremvc.interfaces.IView>`
-    @see: `INotification<puremvc.interfaces.INotification>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.IView`
+    :class:`puremvc.interfaces.INotification`
+
     """
+
     @property
     @abstractmethod
     def notify_method(self) -> Callable[[INotification], None]:
@@ -115,7 +115,6 @@ class IObserver(ABC):
 
         :param obj: The object to compare.
         :type obj: Any
-        :return: boolean indicating if the notification context and the object
-        are the same.
+        :return: boolean indicating if the notification context and the object are the same.
         """
         pass

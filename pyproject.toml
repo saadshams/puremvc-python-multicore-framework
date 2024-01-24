@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "puremvc"
+version = "2.0.0"
+description = "PureMVC Multicore Framework"
+authors = ["Saad Shams"]
+license = "BSD"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

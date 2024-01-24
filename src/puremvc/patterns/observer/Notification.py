@@ -1,10 +1,8 @@
-"""
- Notification.py
- PureMVC Python Multicore
+# Notification.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from typing import Any
 
@@ -13,8 +11,6 @@ from puremvc.interfaces import INotification
 
 class Notification(INotification):
     """
-    :class: Notification
-
     A base `INotification` implementation.
 
     PureMVC does not rely upon underlying event models such
@@ -34,16 +30,19 @@ class Notification(INotification):
     by broadcasting `INotification`s.
 
     A key difference between Flash `Event`s and PureMVC
-    `Notification`s is that `Event`s follow the
+    `Notification` is that `Event` follows the
     'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy
     until some parent component handles the `Event`, while
-    PureMVC `Notification`s follow a 'Publish/Subscribe'
+    PureMVC `Notification` follows a 'Publish/Subscribe'
     pattern. PureMVC classes need not be related to each other in a
     parent/child relationship to communicate with one another
     using `Notification`s.
 
-    @see: `Observer<puremvc.patterns.observer.Observer>`
+    See Also
+    --------
+    :class:`puremvc.patterns.observer.Observer`
     """
+
     def __init__(self, name: str, body: Any = None, _type: str = None):
         """
         Constructor.

@@ -1,10 +1,8 @@
-"""
- Model.py
- PureMVC Python Multicore
+# Model.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 import threading
 from typing import Callable, Dict
@@ -14,8 +12,6 @@ from puremvc.interfaces import IModel, IProxy
 
 class Model(IModel):
     """
-    :class: Model
-
     A Multiton `IModel` implementation.
 
     In PureMVC, the `Model` class provides access to model objects (Proxies)
@@ -30,8 +26,10 @@ class Model(IModel):
     Typically, you use an `ICommand` to create and register `IProxy`
     instances once the `Facade` has initialized the Core actors.
 
-    @see: `Proxy<puremvc.patterns.proxy.Proxy>`
-    @see: `IProxy<puremvc.interfaces.IProxy>`
+    See Also
+    --------
+    :class:`puremvc.patterns.proxy.Proxy`
+    :class:`puremvc.interfaces.IProxy`
     """
     instanceMap: Dict[str, IModel] = dict()
     instanceMapLock: threading.Lock = threading.Lock()

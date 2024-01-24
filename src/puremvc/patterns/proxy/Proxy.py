@@ -1,22 +1,17 @@
-"""
- Proxy.py
- PureMVC Python Multicore
+# Proxy.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from typing import Any
 
 from puremvc.interfaces import IProxy
-
-from src.puremvc.patterns.facade import Notifier
+from puremvc.patterns.facade import Notifier
 
 
 class Proxy(IProxy, Notifier):
     """
-    :class: Proxy
-
     A base `IProxy` implementation.
 
     In PureMVC, `Proxy` classes are used to manage parts of the
@@ -32,7 +27,9 @@ class Proxy(IProxy, Notifier):
     `Proxy` and listening for a `Notification` to be sent
     when the `Proxy` has retrieved the data from the service.
 
-    @see: `Model<puremvc.core.Model>`
+    See Also
+    --------
+    :class:`puremvc.core.Model`
     """
 
     """NAME (str): The name of the `Proxy`"""

@@ -1,13 +1,11 @@
-"""
- IFacade.py
- PureMVC Python Multicore
+# IFacade.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
-from typing import Any, Callable
+from typing import Callable
 
 from .ICommand import ICommand
 from .IMediator import IMediator
@@ -18,8 +16,6 @@ from .IProxy import IProxy
 
 class IFacade(INotifier, ABC):
     """
-    :class: IFacade
-
     The interface definition for a PureMVC Facade.
 
     The Facade Pattern suggests providing a single class to act as a central point of communication
@@ -28,12 +24,13 @@ class IFacade(INotifier, ABC):
     In PureMVC, the Facade acts as an interface between the core MVC actors (Model, View, Controller) and
     the rest of your application.
 
-    @see: `IModel<puremvc.interfaces.IModel>`
-    @see: `IView<puremvc.interfaces.IView>`
-    @see: `IController<puremvc.interfaces.IController>`
-    @see: `ICommand<puremvc.interfaces.ICommand>`
-    @see: `INotification<puremvc.interfaces.INotification>`
+    :class:`puremvc.interfaces.IModel`
+    :class:`puremvc.interfaces.IView`
+    :class:`puremvc.interfaces.IController`
+    :class:`puremvc.interfaces.ICommand`
+    :class:`puremvc.interfaces.INotification`
     """
+
     @abstractmethod
     def register_proxy(self, proxy: IProxy):
         """
@@ -162,7 +159,7 @@ class IFacade(INotifier, ABC):
     @abstractmethod
     def notify_observers(self, notification: INotification):
         """
-        Notify `Observer`s.
+        Notify `Observer`s
 
         :param notification: The `INotification` to have the `View` notify `Observers` of.
         :type notification: INotification

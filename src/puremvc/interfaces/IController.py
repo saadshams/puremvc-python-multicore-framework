@@ -1,10 +1,8 @@
-"""
- IController.py
- PureMVC Python Multicore
+# IController.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import ABC, abstractmethod
 from typing import Callable
@@ -15,8 +13,6 @@ from .INotification import INotification
 
 class IController(ABC):
     """
-    :class: IController
-
     The interface definition for a PureMVC Controller.
 
     In PureMVC, an `IController` implementor follows the 'Command and Controller' strategy, and
@@ -31,9 +27,12 @@ class IController(ABC):
 
     Calling the `ICommand`'s `execute` method, passing in the `INotification`.
 
-    @see: `INotification<puremvc.interfaces.INotification>`
-    @see: `ICommand<puremvc.interfaces.ICommand>`
+    See Also
+    --------
+    :class:`puremvc.interfaces.INotification`
+    :class:`puremvc.interfaces.ICommand`
     """
+
     @abstractmethod
     def register_command(self, notification_name: str, factory: Callable[[], ICommand]):
         """

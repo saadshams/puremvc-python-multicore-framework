@@ -1,10 +1,8 @@
-"""
- View.py
- PureMVC Python Multicore
+# View.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 import threading
 from typing import Dict, List, Callable, Any
@@ -15,8 +13,6 @@ from puremvc.patterns.observer import Observer
 
 class View(IView):
     """
-    :class: View
-
     A Multiton `IView` implementation.
 
     In PureMVC, the `View` class assumes these responsibilities:
@@ -35,9 +31,11 @@ class View(IView):
 
     Notifying the `IObservers` of a given `INotification` when it broadcast.
 
-    @see: `Mediator<puremvc.patterns.mediator.Mediator>`
-    @see: `Observer<puremvc.patterns.observer.Observer>`
-    @see: `Notification<puremvc.patterns.observer.Notification>`
+    See Also
+    --------
+    :class:`puremvc.patterns.mediator.Mediator`
+    :class:`puremvc.patterns.observer.Observer`
+    :class:`puremvc.patterns.observer.Notification`
     """
     instanceMap: Dict[str, IView] = dict()
     instanceMapLock: threading.Lock = threading.Lock()

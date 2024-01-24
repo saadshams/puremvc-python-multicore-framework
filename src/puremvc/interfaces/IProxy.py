@@ -1,10 +1,8 @@
-"""
- IProxy.py
- PureMVC Python Multicore
+# IProxy.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD License
 
 from abc import abstractmethod
 from typing import Any
@@ -14,8 +12,6 @@ from .INotifier import INotifier
 
 class IProxy(INotifier):
     """
-    :class: IProxy
-
     The interface definition for a PureMVC Proxy.
 
     In PureMVC, 'IProxy' implementors assume these responsibilities:</P>
@@ -32,6 +28,7 @@ class IProxy(INotifier):
     if they are not instantiated multiple times.
     Encapsulate interaction with local or remote services used to fetch and persist model data.
     """
+
     @property
     @abstractmethod
     def proxy_name(self) -> str:
