@@ -10,7 +10,7 @@ pip install PureMVC
 ## Documentation
 
 ```commandline
-python3 setup.py sdist (bdist_wheel)
+python3 setup.py sdist (bdist_wheel bdist_egg)
 pip3 install dist/PureMVC-2.0.0.tar.gz
 
 mkdir docs && cd docs && sphinx-quickstart (y)
