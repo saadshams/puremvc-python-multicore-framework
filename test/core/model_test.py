@@ -1,10 +1,8 @@
-"""
- model_test.py
- PureMVC Python Multicore
+# model_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 from typing import List
@@ -16,6 +14,7 @@ from puremvc.patterns.proxy import Proxy
 
 class ModelTest(unittest.TestCase):
     """Test the PureMVC Model class."""
+
     def test_get_instance(self):
         """Tests the Model Multiton Factory Method"""
         # Test Factory Method

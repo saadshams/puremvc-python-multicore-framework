@@ -1,10 +1,8 @@
-"""
- controller_test.py
- PureMVC Python Multicore
+# controller_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 
@@ -16,6 +14,7 @@ from puremvc.patterns.observer import Notification
 
 class ControllerTest(unittest.TestCase):
     """Test the PureMVC Controller class."""
+
     def test_get_instance(self):
         # Test Factory Method
         controller: IController = Controller.get_instance("ControllerTestKey1", lambda k: Controller(k))
@@ -37,6 +36,7 @@ class ControllerTest(unittest.TestCase):
     on an object passed to the Command, which will
     be modified when the Command executes.
     """
+
     def test_register_and_execute_command(self):
         # Create the controller, register the ControllerTestCommand to handle 'ControllerTest' notes
         controller: IController = Controller.get_instance("ControllerTestKey2", lambda k: Controller(k))
@@ -60,6 +60,7 @@ class ControllerTest(unittest.TestCase):
      Tests that once a Command is registered and verified
      working, it can be removed from the Controller.
     """
+
     def test_register_and_remove_command(self):
         # Create the controller, register the ControllerTestCommand to handle 'ControllerTest' notes
         controller: IController = Controller.get_instance("ControllerTestKey3", lambda k: Controller(k))
@@ -94,6 +95,7 @@ class ControllerTest(unittest.TestCase):
     """
     Test hasCommand method.
     """
+
     def test_has_command(self):
         # register the ControllerTestCommand to handle 'hasCommandTest' notes
         controller: IController = Controller.get_instance("ControllerTestKey4", lambda k: Controller(k))
@@ -119,6 +121,7 @@ class ControllerTest(unittest.TestCase):
     the Controller's executeCommand method as is done above in 
     testRegisterAndRemove. 
     """
+
     def test_re_register_and_execute_command(self):
         # Fetch the controller, register the ControllerTestCommand2 to handle 'ControllerTest2' notes
         controller: IController = Controller.get_instance("ControllerTestKey5", lambda k: Controller(k))
@@ -155,6 +158,7 @@ class ControllerTestCommand(SimpleCommand):
     """
     A SimpleCommand subclass used by ControllerTest.
     """
+
     def execute(self, notification: INotification):
         """
         Fabricate a result by multiplying the input by 2
@@ -172,6 +176,7 @@ class ControllerTestCommand2(SimpleCommand):
     """
     A SimpleCommand subclass used by ControllerTest.
     """
+
     def execute(self, notification: INotification):
         """
         Fabricate a result by multiplying the input by 2 and adding to the existing result
@@ -188,6 +193,7 @@ class ControllerTestVO:
     """
     A utility class used by ControllerTest.
     """
+
     def __init__(self, data: int):
         """
         Constructor.

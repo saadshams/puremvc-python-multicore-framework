@@ -1,10 +1,8 @@
-"""
- notifier_test.py
- PureMVC Python Multicore
+# notifier_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 
@@ -15,6 +13,7 @@ from puremvc.patterns.facade import Notifier
 
 class NotifierTest(unittest.TestCase):
     """Test the PureMVC Notifier class."""
+
     def test_register_command_and_send_notification(self):
         # Create the Notifier
         notifier = Notifier()

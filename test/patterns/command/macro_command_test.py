@@ -1,10 +1,8 @@
-"""
- macro_command_test.py
- PureMVC Python Multicore
+# macro_command_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 
@@ -41,6 +39,7 @@ class MacroCommandTest(unittest.TestCase):
     the 'MacroCommandTestCommand' on the Notification
     body.
     """
+
     def test_macro_command_execute(self):
         # Create the VO
         vo = MacroCommandTestVO(5)
@@ -83,6 +82,7 @@ class MacroCommandTestSub1Command(SimpleCommand):
 
 class MacroCommandTestSub2Command(SimpleCommand):
     """A SimpleCommand subclass used by MacroCommandTestCommand."""
+
     def execute(self, notification: INotification):
         """
         Fabricate a result by multiplying the input by itself

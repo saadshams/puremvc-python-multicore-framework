@@ -1,10 +1,8 @@
-"""
- facade_test.py
- PureMVC Python Multicore
+# facade_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 from typing import List
@@ -18,6 +16,7 @@ from puremvc.patterns.proxy import Proxy
 
 class FacadeTest(unittest.TestCase):
     """Test the PureMVC Facade class."""
+
     def test_get_instance(self):
         """Tests the Facade Multiton Factory Method """
         # Test Factory Method
@@ -44,7 +43,7 @@ class FacadeTest(unittest.TestCase):
         # handle 'FacadeTest' notifications
         facade: IFacade = Facade.get_instance("FacadeTestKey2", lambda k: Facade(k))
         facade.register_command("FacadeTestNote", lambda: FacadeTestCommand())
-        
+
         # Send notification. The Command associated with the event
         # (FacadeTestCommand) will be invoked, and will multiply 
         # the vo.input value by 2 and set the result on vo.result

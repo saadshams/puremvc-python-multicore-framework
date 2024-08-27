@@ -11,7 +11,7 @@ setup(
     url="https://puremvc.org",
     author="Saad Shams",
     author_email="saad.shams@puremvc.org",
-    license="BSD License",
+    license="BSD 3-Clause License",
     project_urls={
         "Documentation": "",
         "Source": "https://github.com/PureMVC/puremvc-python-multicore-framework"

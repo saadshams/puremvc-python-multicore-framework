@@ -1,17 +1,17 @@
-"""
- notification_test.py
- PureMVC Python Multicore
+# notification_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
+
 from puremvc.patterns.observer import Notification
 
 
 class NotificationTest(unittest.TestCase):
     """Test the PureMVC Notification class."""
+
     def test_name_accessor(self):
         """Tests setting and getting the name using Notification class accessor methods."""
         # Create a new Notification and use accessors to set the note name

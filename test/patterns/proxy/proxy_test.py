@@ -1,17 +1,17 @@
-"""
- proxy_test.py
- PureMVC Python Multicore
+# proxy_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
+
 from puremvc.patterns.proxy import Proxy
 
 
 class ProxyTest(unittest.TestCase):
     """Test the PureMVC Proxy class."""
+
     def test_name_accessor(self):
         """Tests getting the name using Proxy class accessor method. Setting can only be done in constructor."""
         # Create a new Proxy and use accessors to set the proxy name

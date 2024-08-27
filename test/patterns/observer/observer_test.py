@@ -1,15 +1,14 @@
-"""
- observer_test.py
- PureMVC Python Multicore
+# observer_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
+
 from puremvc.interfaces import INotification
-from puremvc.patterns.observer import Observer
 from puremvc.patterns.observer import Notification
+from puremvc.patterns.observer import Observer
 
 
 class ObserverTest(unittest.TestCase):
@@ -24,6 +23,7 @@ class ObserverTest(unittest.TestCase):
     notification method and context and call the notifyObserver
     method.
     """
+
     def test_observer_accessors(self):
         """Tests observer class when initialized by accessor methods."""
         # Create observer with None args, then
@@ -50,7 +50,7 @@ class ObserverTest(unittest.TestCase):
         """Tests observer class when initialized by constructor."""
         # Create observer passing in notification method and context
         observer = Observer(self.observer_test_method, self)
-        
+
         # create a test note, setting a body value and notify 
         # the observer with it. since the observer is this class 
         # and the notification method is observer_test_method,

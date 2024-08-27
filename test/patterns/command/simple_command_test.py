@@ -1,10 +1,8 @@
-"""
- simple_command_test.py
- PureMVC Python Multicore
+# simple_command_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 
@@ -15,6 +13,7 @@ from puremvc.patterns.observer import Notification
 
 class SimpleCommandTest(unittest.TestCase):
     """Test the PureMVC SimpleCommand class."""
+
     def test_simple_command_execute(self):
         """
         Tests the `execute` method of a `SimpleCommand`.
@@ -46,6 +45,7 @@ class SimpleCommandTest(unittest.TestCase):
 
 class SimpleCommandTestCommand(SimpleCommand):
     """A SimpleCommand subclass used by SimpleCommandTest."""
+
     def execute(self, notification: INotification):
         """
         Fabricate a result by multiplying the input by 2

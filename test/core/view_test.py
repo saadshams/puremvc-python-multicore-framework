@@ -1,10 +1,8 @@
-"""
- view_test.py
- PureMVC Python Multicore
+# view_test.py
+# PureMVC Python Multicore
 
- Copyright(c) 2023 Saad Shams <saad.shams@puremvc.org>
- Your reuse is governed by the BSD License
-"""
+# Copyright(c) 2024 Saad Shams <saad.shams@puremvc.org>
+# Your reuse is governed by the BSD 3-Clause License
 
 import unittest
 
@@ -60,6 +58,7 @@ class ViewTest(unittest.TestCase):
     it is the same as that passed out as the payload of the 
     original 'ViewTestEvent'.
     """
+
     def test_register_and_notify_observer(self):
         # Get the Multiton View instance
         view: IView = View.get_instance("ViewTestKey2", lambda k: View(k))
@@ -340,7 +339,7 @@ class ViewTest(unittest.TestCase):
 
         # clear the counter
         self.counter = 0
-        
+
         # send the notification. each of the above mediators will respond by removing
         # themselves and incrementing the counter by 1. This should leave us with a
         # count of 8, since 8 mediators will respond.
